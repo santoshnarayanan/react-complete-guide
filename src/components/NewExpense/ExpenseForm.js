@@ -13,20 +13,30 @@ const ExpenseForm = () => {
   
   const titleChangeHandler = (event) => {
     //setEnteredTitle(event.target.value);
-    setUserInput({
-      //This ensures other properties are not ignored but needs to be included
-      ...userInput,
-      enteredTitle: event.target.value,
+    
+    // setUserInput({
+    //   //This ensures other properties are not ignored but needs to be included
+    //   ...userInput,
+    //   enteredTitle: event.target.value,
+    // });
+
+    //This is the latest snapshot of how to reterivew states
+    setUserInput((prevState) => {
+      return {...prevState, enteredTitle: event.target.value};
     });
+
   };
 
   const amountChangeHandler = (event) => {
     //setEnteredAmount(event.target.value);
-    setUserInput({
-      //This ensures other properties are not ignored but needs to be included
-      ...userInput,
-      enteredAmount: event.target.value,
-    });
+
+    // setUserInput({
+    //   //This ensures other properties are not ignored but needs to be included
+    //   ...userInput,
+    //   enteredAmount: event.target.value,
+    // });
+
+    
   };
 
   const dateChangeHandler = (event) => {
