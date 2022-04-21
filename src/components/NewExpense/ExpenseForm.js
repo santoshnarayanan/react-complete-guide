@@ -3,16 +3,16 @@ import './ExpenseForm.css'
 
 const ExpenseForm = () => {
   // The below is maintaing stateseperately for three different entity
-  //const [enteredTitle, setEnteredTitle] = useState('');
-  //const [enteredAmount, setEnteredAmount] = useState('');
-  //const [enteredDate, setEnteredDate] = useState('');
+  const [enteredTitle, setEnteredTitle] = useState('');
+  const [enteredAmount, setEnteredAmount] = useState('');
+  const [enteredDate, setEnteredDate] = useState('');
 
   const [userInput, setUserInput] = useState({
     enteredTitle:'', enteredAmount:'',enteredDate:''
   });
   
   const titleChangeHandler = (event) => {
-    //setEnteredTitle(event.target.value);
+    setEnteredTitle(event.target.value);
     
     // setUserInput({
     //   //This ensures other properties are not ignored but needs to be included
@@ -21,14 +21,14 @@ const ExpenseForm = () => {
     // });
 
     //This is the latest snapshot of how to reterivew states
-    setUserInput((prevState) => {
-      return {...prevState, enteredTitle: event.target.value};
-    });
+    // setUserInput((prevState) => {
+    //   return {...prevState, enteredTitle: event.target.value};
+    // });
 
   };
 
   const amountChangeHandler = (event) => {
-    //setEnteredAmount(event.target.value);
+    setEnteredAmount(event.target.value);
 
     // setUserInput({
     //   //This ensures other properties are not ignored but needs to be included
@@ -40,7 +40,7 @@ const ExpenseForm = () => {
   };
 
   const dateChangeHandler = (event) => {
-    //setEnteredDate(event.target.value);
+    setEnteredDate(event.target.value);
     setUserInput({
       //This ensures other properties are not ignored but needs to be included
       ...userInput,
